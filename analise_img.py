@@ -1,11 +1,15 @@
-import cv2 as cv 
+import cv2 as cv
 import numpy as np 
-imagem = cv.imread('Imagens/img01.jpg')
-(b,g,r) = imagem[0,0]
+import mahotas
+# Contar os lados do dados que estão para cima 
+imagem_colorida = cv.imread("Imagens/img02.png")
+
+def escrever(imagem,texto,cor=(255,0,0):
+    fonte = cv.FONT_HERSHEY_SIMPLEX 
+    cv.putText(imagem,texto,(10,20),fonte,0.5, cor, 0, cv.LINE_AA) 
+
+imagem = cv.cvtoColor(imagem_colorida, cv.COLOR_BRG2GRAY)
+desfoque = cv.blur(imagem,(7,7)) 
+# Binarização da imagem, resultando em pixel branco e preto 
 
 
-def analise_img():
-    # Modificando a imagem
-    for y in range(0, imagem.shape[0]):
-        for x in range(0, imagem.shape[1]):
-            imagem[y,x] =  (255,0,0)

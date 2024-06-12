@@ -16,13 +16,10 @@ class analise:
             cv.imshow('Video',gray)
             if cv.waitKey(1) == ord("q"):
                 break 
-            frame.append(gray)
-            # Detectando Pessoas 
-            _,limite = cv.threshold()
+            frame.append(gray) 
             cap.release()
             cv.destroyAllWindows()
         frame_array = np.array(frame)
-
-
+    def redinencionamndo_img():
+        pass 
 analise()
-#https://professor.luzerna.ifc.edu.br/ricardo-antonello/wp-content/uploads/sites/8/2017/02/Livro-Introdução-a-Visão-Computacional-com-Python-e-OpenCV-3.pdf
