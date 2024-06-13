@@ -1,2 +1,2 @@
-1-) A IA vai análisar as videos/img e texto 
-2-) As imagens que teram maior importancia são ser aquelas em dialeto antigo
+A IA vai análisar as videos/img e texto 
+Reconhecimento de objetos, humanos, a quantidade entre outro, para a análise de texto vou estar usando NLP conjunto com a análise de imagem 
