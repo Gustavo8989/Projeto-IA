@@ -10,8 +10,8 @@ def escrever(imagem,texto,cor=(255,0,0)):
 
 imagem = cv.cvtColor(imagem_colorida, cv.COLOR_BGR2GRAY)
 suave = cv.blur(imagem,(7,7)) 
-# Binarização da imagem, resultando em pixel branco e preto 
 
+# Binarização da imagem, resultando em pixel branco e preto 
 T = mahotas.thresholding.otsu(suave)
 bin = suave.copy() 
 bin[bin > T] = 255 
@@ -20,14 +20,9 @@ bin = cv.bitwise_not(bin)
 
 bordas = cv.Canny(suave,70,150) 
 
-(lix,objetos) = cv.findContours(bordas.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE) # A váriavel lix é lixo, os dados que não são utilizados 
-escrever(imagem,"Imagem de tons de cinza", 0)
-escrever(suave, "Suavização com bluer", 0) 
-escrever(bin, "Binarização com método Otsu",255) 
-escrever(bordas,"Detector de bordas Canny",255) 
-temp = np.stack([
-    np.hstack([imagem,suave]),
-    np.hstack([bin,bordas]) 
-]) 
-cv.imshow("Quantidade de objetos"+str(len(objetos)),temp) 
+
+
+
+cv.imshow("Quantidade de objetos",bordas) 
 cv.waitKey(0) 
+
